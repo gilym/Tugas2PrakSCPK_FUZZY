@@ -1,0 +1,69 @@
+[System]
+Name='123200056_Gilang Yoenal Marinta_Fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Penyediaan_Tempat_Sampah'
+Range=[0 10]
+NumMFs=3
+MF1='Kurang':'gaussmf',[1.769 -1.388e-16]
+MF2='Banyak':'gaussmf',[1.77 5]
+MF3='Sangat_Banyak':'gaussmf',[1.769 9.985]
+
+[Input2]
+Name='Kebersihan'
+Range=[0 10]
+NumMFs=3
+MF1='Kotor':'gaussmf',[1.769 -1.388e-16]
+MF2='Bersih':'gaussmf',[1.77 4.993]
+MF3='Sangat_Bersih':'gaussmf',[1.769 9.977]
+
+[Input3]
+Name='Kehijauan_sekolah'
+Range=[0 10]
+NumMFs=3
+MF1='Kurang_Pepohonan':'gaussmf',[1.769 -1.388e-16]
+MF2='Ada_Pepohonan':'gaussmf',[1.769 5]
+MF3='Banyak_Pepohonan':'gaussmf',[1.769 10]
+
+[Output1]
+Name='Keindahan_Sekolah'
+Range=[0 10]
+NumMFs=3
+MF1='Tidak_IndaH':'trimf',[0 1.667 3.333]
+MF2='Indah':'trimf',[3.333 5 6.667]
+MF3='Sangat_Indah':'trimf',[6.667 8.333 10]
+
+[Output2]
+Name='Penilaian_Adiwiyata'
+Range=[0 10]
+NumMFs=3
+MF1='Kurang':'trimf',[0 0 1.5]
+MF2='Baik':'trimf',[1.5 5 8.5]
+MF3='Sangat_Baik':'trimf',[8.5 10 10]
+
+[Output3]
+Name='Kesadaran_Sekolah'
+Range=[0 10]
+NumMFs=3
+MF1='Kurang':'trimf',[-4.167 0 4.167]
+MF2='Baik':'trimf',[0.8333 5 9.167]
+MF3='Sangat_Baik':'trimf',[5.833 10 14.17]
+
+[Rules]
+1 1 1, 1 1 1 (1) : 1
+3 3 3, 3 3 3 (1) : 1
+2 2 2, 2 2 2 (1) : 1
+3 2 1, 2 2 2 (1) : 1
+1 2 2, 2 2 2 (1) : 1
+3 1 1, 2 1 1 (1) : 1
+1 3 3, 3 2 2 (1) : 1
